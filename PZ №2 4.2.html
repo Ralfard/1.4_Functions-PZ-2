@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW 4.1</title>
+    <style>
+        *{
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <script>
+        document.write("Task 2 Написать функцию, которая выводит все числа из заданного пользователем диапазона в прямом порядке. И еще одну функцию – для вывода в обратном порядке.")
+
+        user_data1=+prompt("Введит число с которого начнется диапазон","1");
+        user_data2=+prompt("Введит число на котором законцится диапазон","30");
+
+        function range(x,y){                         //функция для вывода в прямом порядке
+            if(x===y){
+                document.write("<br>"+y)
+            }
+            
+            else{
+                document.write("<br>"+x)
+                return range(x+1,y)
+            }
+        }
+        range(user_data1,user_data2)                //вывод в прямом порядке
+
+        function range_revers(x,y){                  //функция для вывода в обратном порядке
+            if(x===y){
+                document.write("<br>"+x)
+            }
+            else{
+                document.write("<br>"+y)
+                return range_revers(x,y-1)
+            }
+        }
+        range_revers(user_data1,user_data2)           //вывод в обратном порядке
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW 4.1</title>
+    <style>
+        *{
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <script>
+    document.write("Task 5 Написать функцию, которая принимает число и выводит соответствующее количество вложенных пар круглых скобок. Например: число 4 – (((()))).")
+        
+        user_data=+prompt("Введите число что бы получить сумму чисел находящихся в числе","30")
+        var smile=" ͡° ͜ʖ ͡°" //нулевое значение смайлика
+        // почему то смайлик выводит кривым и не похожим на тот что я копировал
+
+        function layer(uData){
+            if(uData===0)
+            return smile
+            else
+            smile="("+smile+")"//просто складываем строки и увеличиваем щеки смайлика
+            return layer(uData-1)
+        }
+
+        document.write(layer(user_data))
+    </script>
+</body>
+</html>

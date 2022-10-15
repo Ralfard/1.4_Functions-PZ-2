@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW 4.1</title>
+    <style>
+        *{
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <script>
+    document.write("Task 3 Написать функцию, которая выводит переданное ей число задом наперед. Например: число 1234 вывести как 4321.")
+
+        user_data=+prompt("Введите число что бы программа вывела его в обратном порядке","1234567890")
+        
+        var new_number="" // В эту переменную будут добавляться перевернутые числа
+
+        function revers(uData){
+            let x;//хранит остаток от деления и каждый новый вызов функции обнуляется
+            if(uData<10){//если то что осталось от числа пользователя меньше 10...
+                return new_number+""+uData //...то добавляем отаток в новое число(перевернутое)
+            }
+            else{//если больше...
+                x=uData%10//...то отрываем одну цифру...
+                if(x===0)//защищает от бесконечного деления на 10
+                new_number+=""+x//...и лепим его к новому числу
+                else
+                new_number+=""+x//...и лепим его к новому числу
+                return revers((uData-x)/10)// повторный вызов функции
+            }
+        }   
+
+        alert(revers(user_data))
+    </script>
+</body>
+</html>
